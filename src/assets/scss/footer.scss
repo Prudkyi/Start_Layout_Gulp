@@ -1,0 +1,48 @@
+@import "virable/main_var";
+@import "mixins/main_mixins";
+//@import "fonts";
+@import "libre/grid";
+@import "libre/main_libre";
+
+footer {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 350;
+  margin-top: $content-margin-bottom;
+  @include _lg {
+    position: relative;
+  }
+}
+
+.footer {
+  display: flex;
+  padding: 0 $padding-main;
+  background-color: $footer-bg-main;
+  color: $footer-color-main;
+  flex-wrap: wrap;
+  @include _md {
+    flex-direction: column;
+  }
+  &__block {
+    flex-grow: 1;
+  }
+
+}
+
+.footer-second {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 $padding-main;
+  background-color: $footer-bg-second;
+  color: $footer-color-second;
+  flex-wrap: wrap;
+  @include _md {
+    flex-direction: column;
+  }
+  &__block {
+    flex-grow: 1;
+  }
+
+}

@@ -1,0 +1,158 @@
+@import "virable/main_var";
+@import "mixins/main_mixins";
+//@import "fonts";
+@import "libre/grid";
+@import "libre/main_libre";
+
+/* Vars */
+$padding-topBottom: 10px;
+$padding-right-logo: 20px;
+$speedOpenMobNav: 500ms;
+$bg-header: #22f1cf;
+$color-header: #111111;
+$bg-header-mob: #22f1cf;
+$color-header-mob: #ffffff;
+$bg-flex-bootstrap: grey;
+/* End Vars */
+
+header {
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 300;
+  @include _lg {
+    position: relative;
+  }
+}
+
+.header {
+  overflow: hidden;
+  background-color: $bg-header;
+  color: $color-header;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  &_fixed {
+    top: 0;
+    width: 100%;
+    @include _lg {
+      position: fixed;
+    }
+  }
+  &_fixed-mob {
+    @include _lg {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  }
+  &_wrap {
+    max-width: $size-basic;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    @include _md {
+      width: 100%;
+    }
+    &__logo {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 200;
+      background-color: $bg-header;
+      height: 100%;
+      padding: $padding-topBottom $padding-right-logo $padding-topBottom 0;
+      @include _xxl {
+        padding: $padding-topBottom $padding-right-logo $padding-topBottom $padding-main;
+      }
+      img {
+        height: 50px;
+      }
+    }
+
+    &__main {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+
+      &_flex-block {
+        background-color: $bg-header;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        @include _lg {
+          color: $color-header-mob;
+          height: auto;
+        }
+        ul {
+          display: flex;
+          li {
+            padding: 10px 0;
+            a {
+
+            }
+          }
+        }
+      }
+
+      &_bootstrap {
+        @include _lg {
+          position: absolute;
+          width: 100%;
+          padding: 0 $padding-main;
+          left: 0;
+          top: -100vh;
+          background-color: $bg-flex-bootstrap;
+          z-index: 100;
+          transition: top $speedOpenMobNav;
+        }
+        ul {
+          @include _lg {
+            flex-direction: column;
+          }
+        }
+      }
+
+      &_second-block {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 200;
+        background-color: $bg-header;
+        height: 100%;
+      }
+
+      &_button {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 200;
+        background-color: $bg-header;
+        padding-right: $padding-main;
+
+        @include _lg {
+          display: flex;
+        }
+        button {
+          cursor: pointer;
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          .icon-hamburger {
+            width: 22px;
+            height: 16px;
+            color: #7c1fb8;
+            &:hover {
+              color: #ff1e39;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}

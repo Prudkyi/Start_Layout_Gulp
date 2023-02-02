@@ -1,0 +1,13 @@
+@import "../virable/main_var";
+@import "../libre/grid";
+
+%btn-1 {
+  border-radius: 7px;
+  padding: 10px 25px 9px;
+  margin: 0;
+  box-shadow: 1px 1px 3px #111111;
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.2s;
+}

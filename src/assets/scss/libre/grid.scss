@@ -1,0 +1,27 @@
+@import "../virable/main_var";
+
+@mixin _xxl {
+  @media (max-width: $size-xxl){
+    @content;
+  }
+}
+@mixin _xl {
+  @media (max-width: $size-xl){
+    @content;
+  }
+}
+@mixin _lg {
+  @media (max-width: $size-lg){
+    @content;
+  }
+}
+@mixin _md {
+  @media (max-width: $size-md){
+    @content;
+  }
+}
+@mixin _sm {
+  @media (max-width: $size-sm){
+    @content;
+  }
+}
