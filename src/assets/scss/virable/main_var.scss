@@ -7,20 +7,37 @@ $size-lg: 993px;
 $size-md: 769px;
 $size-sm: 577px;
 
-$padding-main: 20px;
+$padding-main: 0;
 
 // Backgrounds
 $bg-main: #ffffff;
+$bg-second: #112d51;
 
 // Colors
 $color-main: #111111;
+$color-second: #112d51;
+$color-dop: #378d1d;
+$color-border-blue: #294262;
 
 // Content
 $content-margin-top: 0;
-$content-margin-bottom: 67px;
+$content-margin-bottom: 0;
 
 // Footer
 $footer-bg-main: #112d51;
 $footer-color-main: #ffffff;
 $footer-bg-second: #112d51;
 $footer-color-second: #ffffff;
+
+// Fonts
+$font-bold: 'Manrope-bold';
+$font-extra-bold: 'Manrope-extra-bold';
+$font-extra-light: 'Manrope-extra-light';
+$font-light: 'Manrope-light';
+$font-medium: 'Manrope-medium';
+$font-regular: 'Manrope-regular';
+$font-semi-bold: 'Manrope-semibold';
+
+// Sizes
+
+$size-main-side-padding: 20px;

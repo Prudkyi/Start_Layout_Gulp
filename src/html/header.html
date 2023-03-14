@@ -1,16 +1,16 @@
 <header>
 
-    <div class="header" id="header">
+    <div class="header bgHeaderOpacity" id="header">
 
         <!--
         1. Щоб зафіксувати шапку тільки для мобільного вигляду назнач блоку з id="header_wrap" класс - header_fixed-mob
         2. Щоб зафіксувати шапку для всіх виглядів назнач блоку з id="header_wrap" класс - header_fixed
         -->
-        <div class="header_wrap header_fixed-mob" id="header_wrap">
+        <div class="header_wrap header_fixed" id="header_wrap">
 
             <!-- Logo -->
             <div class="header_wrap__logo">
-                <img src="./assets/img/github_logo.png"/>
+                <img src="./assets/img/github_logo.png" alt=""/>
             </div>
             <!-- End Logo -->
 
@@ -21,8 +21,8 @@
                     <nav>
                         <ul>
                             <li><a href="">Home</a></li>
+                            <li><a href="">Shop</a></li>
                             <li><a href="">About</a></li>
-                            <li><a href="">Page</a></li>
                             <li><a href="">Contact</a></li>
                         </ul>
                     </nav>
@@ -38,9 +38,7 @@
             <!-- Main Content -->
             <div class="header_wrap__main_button">
                 <button id="navBtnMob">
-                    <svg class="icon-hamburger">
-                        <use xlink:href="assets/img/icons/sprite1.svg#hamburger"></use>
-                    </svg>
+                    <i class="material-icons icon-hamburger">menu</i>
                 </button>
             </div>
             <!-- End Main Content -->

@@ -1,0 +1,23 @@
+@import "virable/main_var";
+@import "mixins/main_mixins";
+@import "fonts";
+@import "libre/grid";
+@import "libre/main_libre";
+
+.btn-1 {
+  background-color: $color-dop;
+  padding: 14px 38px;
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 4px #111111;
+  font-family: $font-medium;
+  &:hover {
+    color: $bg-second;
+  }
+  &:before {
+    background-color: #ffffff;
+    color: $bg-second;
+  }
+}
