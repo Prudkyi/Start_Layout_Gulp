@@ -6,14 +6,14 @@
 
 /* Vars */
 $bg-header-opacity: rgba(17, 45, 81, 0.4);
-$bg-header: rgba(17, 45, 81, 1);
+$bg-header: rgba(17, 45, 81, 0.96);   // rgba(17, 45, 81, 0.96);
 $padding-topBottom: 15px;
 $padding-right-logo: 40px;
 $speedOpenMobNav: 500ms;
 $color-header: #ffffff;
 $bg-header-mob: #112d51;
 $color-header-mob: #ffffff;
-$bg-flex-bootstrap: rgba(17, 45, 81, 0.98);;
+$bg-flex-bootstrap: rgba(17, 45, 81, 0.98);
 $size-padding-stay: 20px;
 $timeTransitionHeaderBG: 200ms;
 /* End Vars */
@@ -21,6 +21,7 @@ $timeTransitionHeaderBG: 200ms;
 .bgHeader {
   background-color: $bg-header;
 }
+
 .bgHeaderOpacity {
   background-color: $bg-header-opacity;
 }
@@ -30,6 +31,7 @@ header {
   width: 100%;
   margin: 0 auto;
   z-index: 300;
+
   @include _lg {
     position: relative;
   }
@@ -46,6 +48,7 @@ header {
   @include _lg {
     transition: none;
   }
+
   &_fixed {
     top: 0;
     width: 100%;
@@ -53,6 +56,7 @@ header {
       position: fixed;
     }
   }
+
   &_fixed-mob {
     @include _lg {
       position: fixed;
@@ -60,6 +64,7 @@ header {
       width: 100%;
     }
   }
+
   &_wrap {
     max-width: $size-basic;
     display: flex;
@@ -68,6 +73,7 @@ header {
     @include _md {
       width: 100%;
     }
+
     &__logo {
       display: flex;
       align-items: center;
@@ -80,6 +86,7 @@ header {
         transition: none;
         padding: $padding-topBottom 0 $padding-topBottom $size-padding-stay;
       }
+
       img {
         height: 50px;
       }
@@ -93,6 +100,7 @@ header {
       @include _lg {
         transition: none;
       }
+
       &_flex-block {
         //background-color: $bg-header;
         height: 100%;
@@ -106,16 +114,19 @@ header {
           color: $color-header-mob;
           height: auto;
         }
+
         ul {
           display: flex;
           @include _lg {
             width: 100vw;
             box-shadow: 2px 2px 4px #111111;
           }
+
           li {
             padding: 0;
             display: flex;
             align-items: center;
+
             &:not(:last-child)::after {
               content: "";
               display: inline-block;
@@ -123,15 +134,22 @@ header {
               height: 5px;
               border-radius: 50%;
               margin: 0 20px;
-              background-color: #ffffff;
+              background-color: $color-border-blue;
               position: relative;
               top: 2px;
               @include _lg {
                 display: none;
               }
             }
+
             a {
-              font-size: 18px;
+              font-size: 17px;
+              //font-family: 'Roboto Condensed', sans-serif;
+
+              &:hover {
+                color: $color-dop;
+              }
+
               @include _lg {
                 padding-right: 0;
                 display: flex;
@@ -142,6 +160,7 @@ header {
                 padding-left: $size-padding-stay;
               }
             }
+
             .menuCirclePC {
               font-size: 6px;
               color: #ffffff;
@@ -165,6 +184,7 @@ header {
           z-index: 100;
           transition: top $speedOpenMobNav;
         }
+
         ul {
           @include _lg {
             flex-direction: column;
@@ -184,6 +204,7 @@ header {
         @include _xl {
           justify-content: center;
         }
+
       }
 
       &_button {
@@ -201,14 +222,17 @@ header {
         @include _lg {
           display: flex;
         }
+
         button {
           cursor: pointer;
           display: flex;
           align-content: center;
           justify-content: center;
+
           .icon-hamburger {
             font-size: 30px;
             color: #ffffff;
+
             &:hover {
               color: $color-dop;
             }
@@ -218,5 +242,32 @@ header {
 
     }
 
+  }
+
+  &__social {
+    i {
+      &:hover {
+        color: $color-dop;
+      }
+    }
+    &-insta {
+      font-size: 22px;
+    }
+    &-facebook {
+      font-size: 18px;
+      position: relative;
+      top: -2px;
+      margin: 0 25px;
+    }
+  }
+
+  &__lang {
+    i {
+      position: relative;
+      top: 2px;
+      font-size: 22px;
+      color: $color-dop;
+      cursor: pointer;
+    }
   }
 }

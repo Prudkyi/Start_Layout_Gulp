@@ -19,23 +19,21 @@ $homeBanner-width: 1000px;
   overflow: hidden;
 
   &__slider {
+    position: relative;
+    z-index: 100;
+
     &-item {
-      width: 100%;
-      height: 100%;
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
 
       img {
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
         object-fit: cover;
       }
 
-      span {
+      span, a {
         display: none;
       }
     }
@@ -46,6 +44,7 @@ $homeBanner-width: 1000px;
     top: 120px;
     width: 100%;
     margin: 0 auto;
+    z-index: 200;
     @include _lg {
       max-width: 100%;
       padding: 0 $size-main-side-padding;
@@ -79,9 +78,11 @@ $homeBanner-width: 1000px;
     position: absolute;
     bottom: 0;
     width: 100%;
+    z-index: 200;
     @include _lg {
       max-width: 100%;
     }
+
     &-wrap {
       max-width: $homeBanner-width;
       margin: 0 auto;
@@ -93,7 +94,7 @@ $homeBanner-width: 1000px;
     }
 
     &-block {
-      background-color: $bg-second;
+      background-color: $bg-second-opacity;
       color: #ffffff;
       padding: 0;
       font-size: 18px;
@@ -119,31 +120,65 @@ $homeBanner-width: 1000px;
         flex-grow: 1;
         padding: 20px 20px 20px $size-main-side-padding;
       }
-      &> div, a {
+
+      & > div, a {
         display: flex;
         justify-content: space-between;
       }
+
+
+
       &-head {
         text-transform: uppercase;
         font-size: 14px;
         font-family: $font-bold;
-        div:last-child {
-          font-family: $font-light;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div:first-child {
+          flex-grow: 1;
         }
       }
+
+      &-pagination {
+        font-family: $font-light;
+        position: relative;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-grow: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+      }
+
       &-title {
         font-size: 24px;
         font-family: $font-light;
         flex-direction: column;
+        color: $color-dop;
       }
+
       &-description {
-        font-size: 14px;
+        font-size: 15px;
         font-family: $font-light;
         color: #617190;
+        display: flex;
+        align-items: center;
+        i {
+          font-size: 4px;
+          color: $color-dop;
+          padding: 0 10px;
+        }
       }
+
       a {
         font-family: $font-bold;
         font-size: 16px;
+        &:hover {
+          color: $color-dop;
+        }
       }
     }
 
@@ -160,17 +195,21 @@ $homeBanner-width: 1000px;
         cursor: pointer;
         transition: 0.3s;
         user-select: none;
+
         &:hover {
           background-color: #294262;
           color: $color-dop;
         }
+
         @include _lg {
           font-size: 20px;
         }
       }
+
       &-next {
         border-bottom: 1px solid #294262;
       }
+
       &-prev {
         transform: rotate(180deg);
       }

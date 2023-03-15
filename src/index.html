@@ -9,13 +9,25 @@
 <div id="anchor"></div>
 @@include('html/header.html',{})
 
-<div class="homeBanner">
-    <div class="homeBanner__slider">
+<div class="homeBanner swiper-container">
 
-        <div class="homeBanner__slider-item">
-            <img src="assets/img/banner/pool.png" alt="Crystal Springs" id="homePool">
-            <span class="homeBanner__img-item" data-info="P454510, 7 colors, size 8.4 x 4.6 x 1.5"></span>
+    <div class="homeBanner__slider swiper-wrapper">
+
+        <div class="homeBanner__slider-item swiper-slide" id="homeSlide-0">
+            <img src="assets/img/banner/pool.png" alt="Crystal Springs">
+            <span class="homeBanner__img-item" data-info="P454510*7 colors*size 8.4 x 4.6 x 1.5"></span>
+            <a href="pool-1"></a>
         </div>
+
+<!--
+
+        <div class="homeBanner__slider-item swiper-slide" id="homeSlide-1">
+            <img src="assets/img/banner/img1.jpg" alt="White Night">
+            <span class="homeBanner__img-item" data-info="P777510*5 colors*size 8 x 3.3 x 1.5"></span>
+            <a href="pool-2"></a>
+        </div>
+
+        -->
 
     </div>
 
@@ -36,26 +48,25 @@
             <div class="homeBanner__driver-block">
 
                 <div class="homeBanner__driver-info">
+
                     <div class="homeBanner__driver-info-head">
                         <div>Popular Pools</div>
-                        <div><span>1</span>/<span>12</span></div>
+                        <div class="homeBanner__driver-info-pagination"></div>
                     </div>
                     <div class="homeBanner__driver-info-title">
-                        <span>Crystal Springs</span>
-                        <div class="homeBanner__driver-info-description">
-                            P454510 / 7 colors / size 8.4 x 4.6 x 1.5
-                        </div>
+                        <span class="homeBanner__driver-info-titleSlide"></span>
+                        <div class="homeBanner__driver-info-description"></div>
                     </div>
 
-                    <a href="#">More information</a>
+                    <a class="homeBanner__driver-info-arrow" href="">More information</a>
                 </div>
 
                 <div class="homeBanner__driver-select">
                     <div class="homeBanner__driver-select-next">
-                        <i class="material-icons">arrow_forward_ios</i>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <div class="homeBanner__driver-select-prev">
-                        <i class="material-icons">arrow_forward_ios</i>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                 </div>
 
@@ -69,7 +80,14 @@
 
 
 
-    <div style="height: 1000px; width: 100%;"></div>
+    <div style="height: 1000px; width: 100%;">
+
+
+
+        </div>
+
+
+    </div>
 
 </div>
 <footer id="footer">
