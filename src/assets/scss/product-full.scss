@@ -1,0 +1,81 @@
+@import "virable/main_var";
+@import "mixins/main_mixins";
+@import "libre/reset";
+@import "fonts";
+@import "libre/grid";
+@import "libre/main_libre";
+
+/*******************************/
+
+.product {
+  &__wrap {
+
+  }
+
+  &__title {
+    outline: 1px solid grey;
+    h1 {
+      font-size: 26px;
+      font-family: $font-medium;
+    }
+  }
+
+  &__menu {
+    outline: 1px solid grey;
+    ul {
+      display: flex;
+      li {
+        a {
+
+        }
+      }
+    }
+  }
+
+  &__main {
+    outline: 1px solid grey;
+    display: flex;
+    @include _lg {
+      flex-direction: column;
+    }
+    min-height: 1000px;
+  }
+
+  &__images {
+    outline: 1px solid grey;
+    width: 680px;
+    min-height: 200px;
+  }
+
+  &__data {
+    outline: 1px solid grey;
+    padding-left: 30px;
+    flex-grow: 1;
+    @include _lg {
+      padding-left: 0;
+    }
+    &__code {
+      outline: 1px solid yellow;
+    }
+
+    &__selects {
+      outline: 1px solid yellow;
+    }
+
+    &__buy {
+      outline: 1px solid yellow;
+    }
+
+    &__main-characteristics {
+      outline: 1px solid yellow;
+    }
+
+    &__delivery {
+      outline: 1px solid yellow;
+    }
+  }
+
+  &__characteristics {
+    outline: 1px solid grey;
+  }
+}

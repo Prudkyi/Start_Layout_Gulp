@@ -1,0 +1,37 @@
+@import "virable/main_var";
+@import "mixins/main_mixins";
+@import "libre/reset";
+@import "fonts";
+@import "libre/grid";
+@import "libre/main_libre";
+
+/***************************/
+
+.breadcrumbs {
+  background-color: $color-dop;
+  &__wrap {
+    max-width: $size-basic;
+    margin: 0 auto;
+    padding: 10px $size-main-side-padding;
+    ul {
+      display: flex;
+      li {
+        font-size: 14px;
+        color: $bg-second;
+        i {
+          margin: 0 14px;
+          font-size: 10px;
+          position: relative;
+          top: -1px;
+          color: $color-gray;
+        }
+        a {
+          transition: all 200ms;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

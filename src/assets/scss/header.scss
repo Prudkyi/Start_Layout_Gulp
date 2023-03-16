@@ -6,7 +6,8 @@
 
 /* Vars */
 $bg-header-opacity: rgba(17, 45, 81, 0.4);
-$bg-header: rgba(17, 45, 81, 0.96);   // rgba(17, 45, 81, 0.96);
+$bg-header: rgba(17, 45, 81, 0.96);
+$bg-headerNotOpacity: #1a3557;
 $padding-topBottom: 15px;
 $padding-right-logo: 40px;
 $speedOpenMobNav: 500ms;
@@ -22,9 +23,20 @@ $timeTransitionHeaderBG: 200ms;
   background-color: $bg-header;
 }
 
-.bgHeaderOpacity {
-  background-color: $bg-header-opacity;
+.bgHeaderNotOpacity {
+  background-color: $bg-headerNotOpacity;
 }
+
+.bgHeaderOpacity {
+  background-color: $bg-header;
+}
+
+#home {
+  .bgHeaderOpacity {
+    background-color: $bg-header-opacity;
+  }
+}
+
 
 header {
   top: 0;
@@ -257,7 +269,7 @@ header {
       font-size: 18px;
       position: relative;
       top: -2px;
-      margin: 0 25px;
+      margin: 0 0 0 25px;
     }
   }
 

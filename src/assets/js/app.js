@@ -1,11 +1,13 @@
 import * as prdkFunctions from "./modules/functions.js";
+// breadcrumbs
+import * as prdkBreadcrumbs from "./modules/breadcrumbs.js";
 
 prdkFunctions.isWebP();
 
 /* VARS */
 
 const bg_header_opacity = 'rgba(17, 45, 81, 0.4)',
-    bg_header = 'rgba(17, 45, 81, 1)',
+    bg_header = 'rgba(17, 45, 81, 0.96)',
     mobWidth = 1201,
     timeOpenNavMenu = 500;
 
@@ -39,6 +41,9 @@ $(document).ready(function () {
 
     function bgHeader(flag) {
 
+
+        console.log(flag)
+
         if (flag === 'open') {
             // scroll
             if (mob) {
@@ -48,16 +53,39 @@ $(document).ready(function () {
                 headerSecondBlock.removeClass('bgHeaderOpacity');
                 headerButton.removeClass('bgHeaderOpacity');
 
+                headerLogo.removeClass('bgHeaderNotOpacity');
+                headerMain.removeClass('bgHeaderNotOpacity');
+                headerSecondBlock.removeClass('bgHeaderNotOpacity');
+                headerButton.removeClass('bgHeaderNotOpacity');
+
                 headerLogo.addClass('bgHeader');
                 headerMain.addClass('bgHeader');
-                headerSecondBlock.addClass('bgHeader');
+             //   headerSecondBlock.addClass('bgHeader');
                 headerButton.addClass('bgHeader');
             } else {
                 header.removeClass('bgHeaderOpacity');
                 header.addClass('bgHeader');
             }
 
-        } else {
+        }
+        else if (flag === 'open-click') {
+            console.log('open click')
+            headerLogo.removeClass('bgHeaderOpacity');
+            headerMain.removeClass('bgHeaderOpacity');
+            headerSecondBlock.removeClass('bgHeaderOpacity');
+            headerButton.removeClass('bgHeaderOpacity');
+
+            headerLogo.removeClass('bgHeader');
+            headerMain.removeClass('bgHeader');
+            headerSecondBlock.removeClass('bgHeader');
+            headerButton.removeClass('bgHeader');
+
+            headerLogo.addClass('bgHeaderNotOpacity');
+            headerMain.addClass('bgHeaderNotOpacity');
+            headerSecondBlock.addClass('bgHeaderNotOpacity');
+            headerButton.addClass('bgHeaderNotOpacity');
+        }
+        else {
             // top
             if (mob) {
 
@@ -65,6 +93,11 @@ $(document).ready(function () {
                 headerMain.removeClass('bgHeader');
                 headerSecondBlock.removeClass('bgHeader');
                 headerButton.removeClass('bgHeader');
+
+                headerLogo.removeClass('bgHeaderNotOpacity');
+                headerMain.removeClass('bgHeaderNotOpacity');
+                headerSecondBlock.removeClass('bgHeaderNotOpacity');
+                headerButton.removeClass('bgHeaderNotOpacity');
 
                 headerLogo.addClass('bgHeaderOpacity');
                 headerMain.addClass('bgHeaderOpacity');
@@ -100,7 +133,7 @@ $(document).ready(function () {
     document.getElementById('navBtnMob').addEventListener('click', function (e) {
         if (!prdkCountBtnMob) {
             showHideMenu('open');
-            bgHeader('open');
+            bgHeader('open-click');
             prdkCountBtnMob = true;
         } else {
             showHideMenu('closed');
@@ -133,12 +166,12 @@ $(document).ready(function () {
 
     if (document.getElementById('header_wrap').classList.contains('header_fixed')) {
         document.getElementById('main').style.position = 'relative';
-        //   document.getElementById('main').style.top = headerHeight + 'px';
+        document.getElementById('main').style.top = headerHeight + 'px';
         document.getElementById('header').style.position = 'fixed';
     }
 
     if (document.getElementById('header_wrap').classList.contains('header_fixed-mob')) {
-        //   document.getElementById('main').style.top = headerHeight + 'px';
+        document.getElementById('main').style.top = headerHeight + 'px';
         document.getElementById('header').style.position = 'relative';
     }
 
@@ -186,13 +219,14 @@ $(document).ready(function () {
 
     function setInfoActiveHomeBanner(index) {
 
-        console.log(i)
         i++;
 
         let idSlider = 'homeSlide-' + index;
         let itemTitle = $('#' + idSlider + ' img').attr('alt'),
             itemDescription = $('#' + idSlider + ' .homeBanner__img-item').attr('data-info'),
             itemArrow = $('#' + idSlider + ' a').attr('href');
+
+        if (!itemDescription) return;
 
         let arrayItemDesc = itemDescription.split('*'),
             newStrItemDesc = '';
@@ -212,6 +246,10 @@ $(document).ready(function () {
     })
 
     setInfoActiveHomeBanner(0)
+
+    /* BREADCRUMBS */
+
+    prdkBreadcrumbs.addIcons();
 
 });
 
