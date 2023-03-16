@@ -19,7 +19,7 @@
         font-size: 14px;
         color: $bg-second;
         i {
-          margin: 0 14px;
+          margin: 0 15px;
           font-size: 10px;
           position: relative;
           top: -1px;
@@ -28,7 +28,7 @@
         a {
           transition: all 200ms;
           &:hover {
-            text-decoration: underline;
+            color: #000000;
           }
         }
       }

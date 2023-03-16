@@ -1,6 +1,11 @@
 import * as prdkFunctions from "./modules/functions.js";
 // breadcrumbs
 import * as prdkBreadcrumbs from "./modules/breadcrumbs.js";
+// products full
+import * as prdkProduct from "./modules/product-full.js";
+import {changeSizeViewSRC} from "./modules/product-full.js";
+// product swiper
+import * as prdkProductSwiper from './modules/product-swiper.js';
 
 prdkFunctions.isWebP();
 
@@ -41,9 +46,6 @@ $(document).ready(function () {
 
     function bgHeader(flag) {
 
-
-        console.log(flag)
-
         if (flag === 'open') {
             // scroll
             if (mob) {
@@ -60,16 +62,14 @@ $(document).ready(function () {
 
                 headerLogo.addClass('bgHeader');
                 headerMain.addClass('bgHeader');
-             //   headerSecondBlock.addClass('bgHeader');
+                //   headerSecondBlock.addClass('bgHeader');
                 headerButton.addClass('bgHeader');
             } else {
                 header.removeClass('bgHeaderOpacity');
                 header.addClass('bgHeader');
             }
 
-        }
-        else if (flag === 'open-click') {
-            console.log('open click')
+        } else if (flag === 'open-click') {
             headerLogo.removeClass('bgHeaderOpacity');
             headerMain.removeClass('bgHeaderOpacity');
             headerSecondBlock.removeClass('bgHeaderOpacity');
@@ -84,8 +84,7 @@ $(document).ready(function () {
             headerMain.addClass('bgHeaderNotOpacity');
             headerSecondBlock.addClass('bgHeaderNotOpacity');
             headerButton.addClass('bgHeaderNotOpacity');
-        }
-        else {
+        } else {
             // top
             if (mob) {
 
@@ -231,7 +230,7 @@ $(document).ready(function () {
         let arrayItemDesc = itemDescription.split('*'),
             newStrItemDesc = '';
         for (let i = 0; i < arrayItemDesc.length; i++) {
-            if ((arrayItemDesc.length - 1)  !== i) newStrItemDesc = newStrItemDesc + arrayItemDesc[i] + iconCircle;
+            if ((arrayItemDesc.length - 1) !== i) newStrItemDesc = newStrItemDesc + arrayItemDesc[i] + iconCircle;
             else newStrItemDesc = newStrItemDesc + arrayItemDesc[i];
         }
 
@@ -250,6 +249,22 @@ $(document).ready(function () {
     /* BREADCRUMBS */
 
     prdkBreadcrumbs.addIcons();
+
+    /* PRODUCT FULL */
+
+    prdkProduct.changeSizeView();
+    let dataSize = prdkProduct.changeSizeViewSRC($('.product__data__selects__sizes__wrap button:first-child'));
+    $('.product__data__selects__sizes__wrap button').click(function () {
+        dataSize = prdkProduct.changeSizeViewSRC($(this));
+        prdkProduct.vievActiveSize($(this));
+    });
+
+
+    /* SWIPER PRODUCT */
+
+    prdkProductSwiper.swiper();
+
+
 
 });
 
